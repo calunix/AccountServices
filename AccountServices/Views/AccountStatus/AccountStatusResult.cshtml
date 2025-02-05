@@ -1,0 +1,27 @@
+﻿@model AccountServices.Models.AccountStatus
+
+@{
+    ViewData["Title"] = "Account Status";
+}
+
+<h1>Account Status</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="resetSubmitMessage">
+            <p><b>Accounts found for @Model.EmailAddress</b></p>
+            @{
+                string[] lines = @Model.AccountStatusResults.Split('\n');
+                foreach (string line in lines)
+                {
+                    if (line.Contains("User")) {
+                        @Html.Raw($"<b>{line}</b><br>");
+                    }
+                    else {
+                        @Html.Raw($"{line}<br>");
+                    }
+                }
+            }
+        </div>
+    </div>
+</div>

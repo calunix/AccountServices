@@ -1,0 +1,37 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-group {
+  margin-top: 1em;
+}
+
+h1 {
+    text-align: center;
+}
+
+.col-md-4 {
+    margin: auto;
+    width: 60%;
+    max-width: 400px;
+}
+
+.pwResetSuccess {
+    text-align: center;
+    font-size: 18px;
+}

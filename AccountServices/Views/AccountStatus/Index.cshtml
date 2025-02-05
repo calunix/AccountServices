@@ -1,0 +1,27 @@
+﻿@model AccountServices.Models.AccountStatus
+
+@{
+    ViewData["Title"] = "Account Status";
+}
+
+<h1>Account Status</h1>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="resetSubmitMessage" onsubmit="SubmitButton.disabled = true; return true;">
+            Submit your email address to get your account status.
+        </div>
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmailAddress" class="control-label"></label>
+                <input asp-for="EmailAddress" class="form-control" />
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" name="SubmitButton"/>
+            </div>
+        </form>
+    </div>
+</div>
