@@ -68,7 +68,7 @@ namespace AccountServices.Controllers
                     return View(passwordReset);
                 }
 
-                if (user.GetEmailAddress() != passwordReset.UserEmailAddress)
+                if (user.GetEmailAddress() != passwordReset.UserEmailAddress.ToLower())
                 {
                     Console.WriteLine("Email doesn't match our records");
                     ModelState.AddModelError("UserEmailAddress", @"Specified email does not match email on record");
